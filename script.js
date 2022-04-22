@@ -7,18 +7,11 @@ let activeCircle = 1;
 
 next.addEventListener("click", () => {
   activeCircle++;
-  if (activeCircle > circles.length) {
-    activeCircle = 4;
-  }
-
   update();
 });
 
 prev.addEventListener("click", () => {
   activeCircle--;
-  if (activeCircle < 1) {
-    activeCircle = 1;
-  }
   update();
 });
 
@@ -40,8 +33,8 @@ const update = function () {
     next.classList.add("not--allowed");
   } else {
     prev.disabled = false;
-    prev.classList.remove("not--allowed");
     next.disabled = false;
+    prev.classList.remove("not--allowed");
     next.classList.remove("not--allowed");
   }
 };
